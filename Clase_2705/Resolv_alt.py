@@ -40,29 +40,30 @@ while seguir_simulacion == 0:  # Cuando no se quema nada, se detiene el proceso
     # Lógica para quemar los árboles, si hay un árbol encendido, se quema al rededor, y el árbol se apaga. El proceso se repite hasta que no se queme nada.
     for fila in range(filas):
         for columna in range(columnas):
-            if (
-                bosque[fila][columna] == 2
-            ):  # Si hay un arbol encendido, se quema al rededor
-                if (
-                    fila - 1 >= 0 and bosque[fila - 1][columna] == 1
-                ):  # Si el árbol de arriba existe, se quema
-                    bosque[fila - 1][columna] = (
+            if bosque[fila][columna] == 1:  # Si hay un arbol apagado ...
+                if fila - 1 >= 0 and (
+                    bosque[fila - 1][columna] == 2 or bosque[fila - 1][columna] == 4
+                ):  # ... y su vecino de arriba se quema, este se quema
+                    bosque[fila][columna] = (
                         3  # OJO: el 3 es un estado intermedio para marcar que ese árbol se quemó en esta iteración y se hace para que no quemen instantaneamente a los demás
                     )
-                if (
-                    fila + 1 < filas and bosque[fila + 1][columna] == 1
-                ):  # Si el árbol de abajo existe, se quema
-                    bosque[fila + 1][columna] = 3
-                if (
-                    columna - 1 >= 0 and bosque[fila][columna - 1] == 1
-                ):  # Si el árbol de la izquierda existe, se quema
-                    bosque[fila][columna - 1] = 3
-                if (
-                    columna + 1 < columnas and bosque[fila][columna + 1] == 1
-                ):  # Si el árbol de la derecha existe, se quema
-                    bosque[fila][columna + 1] = 3
-                bosque[fila][columna] = 0
-                seguir_simulacion = 0  # Si se quemó algo, cambio el flag a 0 para que el proceso continúe
+                if fila + 1 < filas and (
+                    bosque[fila + 1][columna] == 2 or bosque[fila + 1][columna] == 4
+                ):  # árbol de abajo
+                    bosque[fila][columna] = 3
+                if columna - 1 >= 0 and (
+                    bosque[fila][columna - 1] == 2 or bosque[fila][columna - 1] == 4
+                ):  # árbol de la izquierda
+                    bosque[fila][columna] = 3
+                if columna + 1 < columnas and (
+                    bosque[fila][columna + 1] == 2 or bosque[fila][columna + 1] == 4
+                ):  # árbol de la derecha
+                    bosque[fila][columna] = 3
+            elif bosque[fila][columna] == 2:
+                bosque[fila][columna] = (
+                    4  # OJO: 4 es un estado intermedio para arboles que se quemaron esta ronda
+                )
+                seguir_simulacion = 0  # La simulación correra hasta que ningún arbol se esté quemando, ahí esta flag no se activa y el while se rompe
 
     # Lógica para convertir los arboles que se quemaron en esta iteración en árboles que ahora queman al resto
     for fila in range(filas):
@@ -71,9 +72,12 @@ while seguir_simulacion == 0:  # Cuando no se quema nada, se detiene el proceso
                 bosque[fila][columna] == 3
             ):  # Si hay un árbol que se quemó en esta iteración, pasa a ser foco de incendio para la siguiente iteración
                 bosque[fila][columna] = 2
+            elif bosque[fila][columna] == 4:
+                # Si el árbol se consumió esta iteración, pasa a ser tierra vacia en la siguiente
+                bosque[fila][columna] = 0
 
     print("Iteración terminada")
-    print(f"Número de iteraciones: {numero_iteracion}")
+    print(f"Número de iteraciones: {numero_iteracion + 1}")
 
     # Imprimo el mapa después de cada iteración
     bosque_visual = []
