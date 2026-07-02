@@ -1,0 +1,165 @@
+/* ===========================================
+   Demo Reveal.js
+   Paleta UAI: azul oscuro + magenta + naranja
+   =========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --azul-oscuro: #1a2744;
+  --azul-medio: #2d3e5f;
+  --azul-claro-fondo: #e8edf4;
+  --magenta: #8b1a6e;
+  --magenta-claro-fondo: #f3e8f0;
+  --naranja: #c45200;
+  --naranja-claro-fondo: #fbece0;
+  --gris-claro: #f4f4f4;
+  --gris-texto: #5a5a5a;
+  --blanco: #ffffff;
+  --texto: #1a2744;
+
+  --heading-font: "Inter", "Helvetica", sans-serif;
+  --body-font: "Inter", "Helvetica", sans-serif;
+  --base-font-size: 24px;
+  --text-size: 14pt;
+  --h1-size: 38pt;
+  --h2-size: 24pt;
+  --h3-size: 17pt;
+  --footnote-size: 10pt;
+
+  --slide-padding: 40px;
+  --slide-padding-top: 30px;
+  --content-gap: 18px;
+  --box-radius: 6px;
+}
+
+.reveal {
+  font-family: var(--body-font);
+  color: var(--texto);
+  background-color: var(--blanco);
+}
+
+.reveal h1, .reveal h2, .reveal h3 {
+  font-family: var(--heading-font);
+  text-transform: none;
+  color: var(--azul-oscuro);
+  font-weight: 700;
+}
+
+.reveal h1 { font-size: var(--h1-size); }
+.reveal h2 { font-size: var(--h2-size); }
+.reveal h3 { font-size: var(--h3-size); }
+
+.reveal p, .reveal li {
+  font-size: var(--text-size);
+  line-height: 1.45;
+  color: var(--texto);
+}
+
+.reveal strong { color: var(--magenta); font-weight: 700; }
+.reveal code {
+  font-family: "Fira Mono", "Courier New", monospace;
+  font-size: 0.85em;
+  background-color: var(--gris-claro);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  color: var(--azul-oscuro);
+}
+
+.reveal .slides section {
+  padding: var(--slide-padding-top) var(--slide-padding) var(--slide-padding) var(--slide-padding);
+  text-align: left;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.reveal .slides section h2 {
+  border-bottom: 3px solid var(--magenta);
+  padding-bottom: 0.15em;
+  margin: 0 0 0.4em 0;
+  width: 100%;
+}
+
+.eyebrow {
+  font-size: 11pt;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--azul-medio);
+  font-weight: 700;
+}
+
+/* Demo swatches de color */
+.demo-color-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8em;
+  margin-top: 0.6em;
+}
+
+.demo-color {
+  background-color: var(--blanco);
+  border-radius: var(--box-radius);
+  padding: 0.7em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.demo-swatch {
+  width: 100%;
+  height: 90px;
+  border-radius: 4px;
+  margin-bottom: 0.4em;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.demo-color-name {
+  font-size: 13pt;
+  font-weight: 700;
+  color: var(--azul-oscuro);
+  margin-bottom: 0.1em;
+}
+
+.demo-color-hex {
+  font-size: 11pt;
+  color: var(--gris-texto);
+  font-family: "Fira Mono", "Courier New", monospace;
+}
+
+/* Demo cards */
+.demo-card {
+  background-color: var(--blanco);
+  border-radius: var(--box-radius);
+  padding: 0.6em 0.8em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  border-top: 4px solid var(--azul-oscuro);
+}
+
+.demo-card-azul { border-top-color: var(--azul-oscuro); }
+.demo-card-magenta { border-top-color: var(--magenta); }
+.demo-card-naranja { border-top-color: var(--naranja); }
+
+.demo-card-title {
+  font-size: 14pt;
+  font-weight: 700;
+  color: var(--azul-oscuro);
+  margin-bottom: 0.2em;
+}
+
+.demo-card p { margin: 0.2em 0; }
+
+.demo-num {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  background-color: var(--azul-oscuro);
+  color: var(--blanco);
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 11pt;
+  margin-bottom: 0.2em;
+}
+
+.demo-card-magenta .demo-num { background-color: var(--magenta); }
+.demo-card-naranja .demo-num { background-color: var(--naranja); }

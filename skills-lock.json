@@ -19,6 +19,12 @@
       "skillPath": "md-slides/SKILL.md",
       "computedHash": "13726d169fcf7f948b0a954bdd659eb80baddffc613c38418d33a8bd721181fd"
     },
+    "revealjs": {
+      "source": "ryanbbrown/revealjs-skill",
+      "sourceType": "github",
+      "skillPath": "skills/revealjs/SKILL.md",
+      "computedHash": "9cb12cf3e2adce08accb72fb7db7edfb75f9eebd840b47e9c9a47b29b5392892"
+    },
     "slidev": {
       "source": "antfu/skills",
       "sourceType": "github",

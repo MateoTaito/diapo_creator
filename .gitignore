@@ -1,2 +1,18 @@
-#node-modules
+# Dependencias
 node_modules/
+
+# Slidev
+dist/
+slides-export.pdf
+*-export.pdf
+diagramas/*.png
+
+# reveal.js
+screenshots/
+*.pdf
+
+# Editor
+.vscode/
+.idea/
+.DS_Store
+*.swp

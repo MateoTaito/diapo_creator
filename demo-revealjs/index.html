@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Reveal.js · diapo_creator</title>
+
+  <!-- Reveal.js core -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- ============================================ -->
+      <!-- LAMINA 0 - PORTADA                            -->
+      <!-- ============================================ -->
+      <section id="portada">
+        <h1>Demo Reveal.js</h1>
+        <p class="eyebrow">Plantilla de referencia para el proyecto diapo_creator</p>
+        <p>Cada presentación en reveal.js es un único archivo <code>index.html</code> acompañado de un <code>styles.css</code> y, opcionalmente, una carpeta <code>assets/</code> para imágenes.</p>
+        <p>Las dependencias se cargan por CDN — no hay paso de build.</p>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LAMINA 1 - COLORES                            -->
+      <!-- ============================================ -->
+      <section id="colores">
+        <h2>Paleta de colores del proyecto</h2>
+        <p>Estos son los colores base que toda presentación nueva debe usar. Define las variables CSS en <code>:root</code> y úsalas en tus estilos.</p>
+
+        <div class="demo-color-grid">
+          <div class="demo-color">
+            <div class="demo-swatch" style="background-color: #1a2744;"></div>
+            <div class="demo-color-name">Azul oscuro</div>
+            <div class="demo-color-hex">#1a2744</div>
+          </div>
+          <div class="demo-color">
+            <div class="demo-swatch" style="background-color: #2d3e5f;"></div>
+            <div class="demo-color-name">Azul medio</div>
+            <div class="demo-color-hex">#2d3e5f</div>
+          </div>
+          <div class="demo-color">
+            <div class="demo-swatch" style="background-color: #8b1a6e;"></div>
+            <div class="demo-color-name">Magenta</div>
+            <div class="demo-color-hex">#8b1a6e</div>
+          </div>
+          <div class="demo-color">
+            <div class="demo-swatch" style="background-color: #c45200;"></div>
+            <div class="demo-color-name">Naranja</div>
+            <div class="demo-color-hex">#c45200</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LAMINA 2 - ESTRUCTURA DE DIAPOSITIVA          -->
+      <!-- ============================================ -->
+      <section id="estructura">
+        <h2>Estructura básica de una diapositiva</h2>
+        <p>Cada <code>&lt;section&gt;</code> dentro de <code>&lt;div class="slides"&gt;</code> es una diapositiva. La navegación es horizontal por defecto; stacks verticales se logran anidando <code>&lt;section&gt;</code>.</p>
+
+        <pre><code class="language-html" style="font-size: 14pt; line-height: 1.4; display: block; padding: 1em; background: #f4f4f4; border-radius: 6px;">&lt;section id="mi-slide"&gt;
+  &lt;h2&gt;Título de la diapositiva&lt;/h2&gt;
+  &lt;p&gt;Contenido...&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LAMINA 3 - GRIDS                              -->
+      <!-- ============================================ -->
+      <section id="grids">
+        <h2>Layouts de dos y tres columnas</h2>
+        <p>Usa <code>display: grid</code> directamente con estilos inline. Cada slide tiene proporciones distintas, por eso no usamos clases utilitarias globales.</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8em; margin-top: 0.6em;">
+
+          <div class="demo-card demo-card-azul">
+            <div class="demo-card-title">Columna izquierda</div>
+            <p>Para presentar la idea principal o la pregunta de investigación.</p>
+          </div>
+
+          <div class="demo-card demo-card-magenta">
+            <div class="demo-card-title">Columna derecha</div>
+            <p>Para la respuesta, evidencia o impacto esperado.</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LAMINA 4 - GRID DE 3                          -->
+      <!-- ============================================ -->
+      <section id="grids-3">
+        <h2>Grid de tres columnas</h2>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.6em; margin-top: 0.6em;">
+
+          <div class="demo-card demo-card-azul">
+            <div class="demo-num">1</div>
+            <div class="demo-card-title">Concepto A</div>
+            <p>Primera dimensión o categoría.</p>
+          </div>
+
+          <div class="demo-card demo-card-magenta">
+            <div class="demo-num">2</div>
+            <div class="demo-card-title">Concepto B</div>
+            <p>Segunda dimensión o categoría.</p>
+          </div>
+
+          <div class="demo-card demo-card-naranja">
+            <div class="demo-num">3</div>
+            <div class="demo-card-title">Concepto C</div>
+            <p>Tercera dimensión o categoría.</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LAMINA 5 - IMAGENES                           -->
+      <!-- ============================================ -->
+      <section id="imagenes">
+        <h2>Imágenes y assets</h2>
+        <p>Las imágenes viven en <code>assets/</code> dentro de la carpeta de la presentación. Se referencian con rutas relativas, igual que en cualquier HTML estático.</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1em; margin-top: 0.5em; align-items: center;">
+
+          <div>
+            <pre><code class="language-html" style="font-size: 13pt; line-height: 1.4; display: block; padding: 1em; background: #f4f4f4; border-radius: 6px;">&lt;img
+  src="assets/grafico.png"
+  alt="descripcion"
+  style="width: 100%;"&gt;</code></pre>
+          </div>
+
+          <div>
+            <p><strong>Buenas prácticas:</strong></p>
+            <ul style="font-size: 14pt; line-height: 1.5;">
+              <li>Usa <code>object-fit: contain</code> dentro de un contenedor flex</li>
+              <li>Genera los gráficos con <code>generar_grafico_lamina_X.py</code></li>
+              <li>Formato PNG para figuras con texto</li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LAMINA 6 - COMANDOS                           -->
+      <!-- ============================================ -->
+      <section id="comandos">
+        <h2>Cómo trabajar con reveal.js</h2>
+
+        <div class="demo-card demo-card-azul" style="margin-bottom: 0.6em;">
+          <div class="demo-card-title">Desarrollo local</div>
+          <p>Servir la carpeta actual con cualquier servidor estático:</p>
+          <pre><code style="font-size: 13pt; display: block; padding: 0.6em 0.8em; background: #f4f4f4; border-radius: 4px; margin: 0.4em 0;">python3 -m http.server 8080
+# luego abrir http://localhost:8080</code></pre>
+        </div>
+
+        <div class="demo-card demo-card-magenta" style="margin-bottom: 0.6em;">
+          <div class="demo-card-title">Generar PDF / screenshots</div>
+          <p>Usa <code>decktape</code> para producir el PDF de la presentación y screenshots de cada lámina.</p>
+          <pre><code style="font-size: 13pt; display: block; padding: 0.6em 0.8em; background: #f4f4f4; border-radius: 4px; margin: 0.4em 0;">npx decktape reveal \
+  "http://localhost:8080/index.html" \
+  output.pdf --screenshots</code></pre>
+        </div>
+
+        <div class="demo-card demo-card-naranja">
+          <div class="demo-card-title">Verificación de overflow</div>
+          <p>Antes de exportar, revisa cada lámina con el script del skill <code>revealjs</code>:</p>
+          <pre><code style="font-size: 13pt; display: block; padding: 0.6em 0.8em; background: #f4f4f4; border-radius: 4px; margin: 0.4em 0;">node .agents/skills/revealjs/scripts/check-overflow.js \
+  index.html</code></pre>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      width: 1280,
+      height: 720,
+      margin: 0,
+      controls: true,
+      progress: true,
+      slideNumber: true,
+      hash: true,
+      transition: 'slide',
+      center: false
+    });
+  </script>
+</body>
+</html>
