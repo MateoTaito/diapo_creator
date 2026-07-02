@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulaciones de Cumplimiento Tributario</title>
+
+  <!-- Reveal.js core -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- ============================================ -->
+      <!-- LAMINA 0 - PORTADA                            -->
+      <!-- ============================================ -->
+      <section id="portada">
+        <div class="cover-wrap">
+          <div class="cover-deco-circle-1"></div>
+          <div class="cover-deco-circle-2"></div>
+
+          <div class="cover-content">
+
+            <h1 class="cover-title">Simulaciones de Cumplimiento Tributario: La Interacción entre la Memoria Institucional y la Memoria Social en Modelos Basados en Agentes</h1>
+            <div class="cover-deco-line"></div>
+
+            <div class="cover-grid">
+
+              <div class="cover-block cover-block-left">
+                <div class="cover-block-label">Autor</div>
+                <div class="cover-block-text">
+                  <strong>Mateo Taito Stambuk</strong>
+                </div>
+                <div class="cover-block-label" style="margin-top: 0.6em;">Fecha</div>
+                <div class="cover-block-text">
+                  <strong>Julio de 2026</strong>
+                </div>
+              </div>
+
+              <div class="cover-block cover-block-right">
+                <div class="cover-block-label">Profesores guía</div>
+                <div class="cover-block-text">
+                  <strong>Danilo Bórquez</strong>
+                  <strong>Enrique Canessa</strong>
+                  <strong>Richard Peña</strong>
+                  <strong>Ariel Quezada</strong>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="cover-footer">
+              Tesis de Magíster en Ciencias de la Ingeniería, mención Tecnologías de la Información<br>
+              Universidad Adolfo Ibáñez · Facultad de Ingeniería y Ciencias
+            </div>
+
+          </div>
+
+          <div class="cover-logo">UAI</div>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LAMINA 1 - CONTEXTUALIZACION                  -->
+      <!-- ============================================ -->
+      <section id="lamina-1">
+        <h2>La evasión tributaria es un problema persistente y cuantificable</h2>
+
+        <div class="l1-grid">
+
+          <div class="l1-stat-card">
+            <div class="l1-stat-num">26,5%</div>
+            <div class="l1-stat-text">
+              Tasa de <strong>ocupación informal</strong> en Chile
+            </div>
+            <div class="l1-stat-sub">
+              2.498.665 personas al margen del control fiscal
+            </div>
+            <div>
+              <span class="l1-stat-trend">▲ +0,7 pp en 12 meses</span>
+            </div>
+          </div>
+
+          <div class="l1-chart">
+            <img src="assets/grafico_lamina_1.png" alt="Evolución tasa de ocupación informal Chile 2025-2026">
+          </div>
+
+        </div>
+
+        <div class="l1-highlight">
+          La autoridad no puede fiscalizarlo todo: necesita <strong>discriminar cómo y a quién auditar</strong>.
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LAMINA 2 - DEFINICION DEL PROBLEMA            -->
+      <!-- ============================================ -->
+      <section id="lamina-2">
+        <h2>El problema: ¿qué estrategia de fiscalización sirve en cada contexto?</h2>
+
+        <div class="eyebrow">Cuatro componentes del problema</div>
+
+        <div class="l2-grid-2">
+
+          <div class="l2-card">
+            <div class="l2-card-num">1</div>
+            <div class="l2-card-title">Memoria institucional</div>
+            <p class="l2-card-text">
+              El SII puede revisar declaraciones de varios períodos fiscales anteriores, no solo el actual.
+            </p>
+          </div>
+
+          <div class="l2-card l2-card-magenta">
+            <div class="l2-card-num">2</div>
+            <div class="l2-card-title">Ruido de detección</div>
+            <p class="l2-card-text">
+              La probabilidad de identificar correctamente un fraude antiguo <strong>disminuye con la antigüedad</strong> de la información.
+            </p>
+          </div>
+        </div>
+
+        <div class="l2-grid-2">
+          <div class="l2-card l2-card-naranja">
+            <div class="l2-card-num">3</div>
+            <div class="l2-card-title">Memoria social</div>
+            <p class="l2-card-text">
+              Los contribuyentes ajustan su comportamiento observando si sus vecinos fueron auditados.
+            </p>
+          </div>
+
+          <div class="l2-card l2-card-azul">
+            <div class="l2-card-num">4</div>
+            <div class="l2-card-title">Estrategia de selección</div>
+            <p class="l2-card-text">
+              Forma en que el fiscalizador elige a quién auditar: aleatoria, por ingreso o por puntaje de riesgo.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="l2-question">
+          <span class="l2-question-label">Pregunta de investigación</span>
+          ¿De qué manera la profundidad variable de la memoria institucional interactúa con la memoria social y la estrategia de fiscalización para afectar las tasas a largo plazo de cumplimiento y evasión tributaria?
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LAMINA 3 - ESTADO DEL ARTE                    -->
+      <!-- ============================================ -->
+      <section id="lamina-3">
+        <h2>Estado del arte: cómo se ha estudiado el problema</h2>
+
+        <div class="l3-intro">
+          Evolución de los modelos basados en agentes que abordan cumplimiento tributario, focalización de auditoría y aprendizaje social.
+        </div>
+
+        <div class="l3-timeline-wrap">
+          <div class="l3-timeline">
+            <div class="l3-timeline-line"></div>
+
+            <!-- Fila superior: 5 pines (2010, 2014 Andrei, 2014 Hokamp, 2018, 2019 Di Mauro) -->
+            <div class="l3-pin l3-pin-top">
+              <div class="l3-pin-label"><strong>2010</strong>Hokamp: memoria social</div>
+              <div class="l3-pin-circle">'10</div>
+              <div class="l3-pin-year">2010</div>
+            </div>
+
+            <div class="l3-pin l3-pin-top">
+              <div class="l3-pin-label"><strong>2014</strong>Andrei: "Big Fish"</div>
+              <div class="l3-pin-circle">'14</div>
+              <div class="l3-pin-year">2014</div>
+            </div>
+
+            <div class="l3-pin l3-pin-top">
+              <div class="l3-pin-label"><strong>2014</strong>Hokamp: back-auditing</div>
+              <div class="l3-pin-circle">'14</div>
+              <div class="l3-pin-year">2014</div>
+            </div>
+
+            <div class="l3-pin l3-pin-top">
+              <div class="l3-pin-label"><strong>2018</strong>DeBacker: decae disuasión</div>
+              <div class="l3-pin-circle">'18</div>
+              <div class="l3-pin-year">2018</div>
+            </div>
+
+            <div class="l3-pin l3-pin-top">
+              <div class="l3-pin-label"><strong>2019</strong>Di Mauro: umbral 55%</div>
+              <div class="l3-pin-circle">'19</div>
+              <div class="l3-pin-year">2019</div>
+            </div>
+          </div>
+          <div class="l3-timeline">
+            <div class="l3-timeline-line"></div>
+
+            <!-- Fila inferior: 4 pines (2019 Hashimzade, 2020, 2021, 2025 destacado) -->
+            <div class="l3-pin l3-pin-bottom">
+              <div class="l3-pin-year">2019</div>
+              <div class="l3-pin-circle">'19</div>
+              <div class="l3-pin-label l3-pin-label-bottom"><strong>2019</strong>Hashimzade: 4 estrategias</div>
+            </div>
+
+            <div class="l3-pin l3-pin-bottom">
+              <div class="l3-pin-year">2020</div>
+              <div class="l3-pin-circle">'20</div>
+              <div class="l3-pin-label l3-pin-label-bottom"><strong>2020</strong>Beer: counter-deterrent</div>
+            </div>
+
+            <div class="l3-pin l3-pin-bottom">
+              <div class="l3-pin-year">2021</div>
+              <div class="l3-pin-circle">'21</div>
+              <div class="l3-pin-label l3-pin-label-bottom"><strong>2021</strong>Chica: power-law</div>
+            </div>
+
+            <div class="l3-pin l3-pin-bottom l3-pin-highlight">
+              <div class="l3-pin-year">2025</div>
+              <div class="l3-pin-circle">'25</div>
+              <div class="l3-pin-label l3-pin-label-bottom"><strong>2025</strong>Canessa: base de la tesis ★</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="l3-conclusion">
+          <strong>Vacío persistente:</strong> ningún ABM combina memoria institucional, memoria social y estrategia de fiscalización en un mismo marco. Esta tesis llena ese vacío.
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LAMINA 4 - HIPOTESIS Y OBJETIVOS              -->
+      <!-- ============================================ -->
+      <section id="lamina-4">
+        <h2>Hipótesis y objetivos</h2>
+
+        <div class="l4-grid">
+
+          <div class="l4-left">
+
+            <div class="l4-h1">
+              <div class="l4-h1-tag">H1 · Principal</div>
+              <p>La memoria institucional reduce significativamente la evasión a largo plazo, y su efecto se modula por la memoria social y la estrategia de fiscalización.</p>
+            </div>
+
+            <ul class="l4-bullets">
+              <li><span class="l4-bullet-tag">H2</span> Mayor profundidad reduce la evasión, pero el efecto decrece con el ruido.</li>
+              <li><span class="l4-bullet-tag">H3</span> Memoria social corta potencia la memoria profunda; memoria social larga la atenúa.</li>
+              <li><span class="l4-bullet-tag">H4</span> Memoria profunda: estrategia de riesgo supera a la aleatoria; ingreso queda por debajo.</li>
+              <li><span class="l4-bullet-tag">H5</span> Memoria profunda perjudica a la aleatoria: la fuerza se redistribuye.</li>
+            </ul>
+
+          </div>
+
+          <div class="l4-right">
+
+            <div class="l4-og">
+              <div class="l4-og-tag">Objetivo general</div>
+              <p>Extender el modelo de Canessa y Peña Quezada (2025) con memoria institucional parametrizable, para caracterizar la interacción tripartita.</p>
+            </div>
+
+            <ul class="l4-bullets l4-bullets-blue">
+              <li><span class="l4-bullet-tag l4-bullet-tag-blue">OE1</span> Extender el ABM con auditoría retrospectiva y ruido.</li>
+              <li><span class="l4-bullet-tag l4-bullet-tag-blue">OE2</span> Ejecutar el diseño factorial de tres factores.</li>
+              <li><span class="l4-bullet-tag l4-bullet-tag-blue">OE3</span> Analizar las interacciones sobre PIAR, MRA y PDF.</li>
+              <li><span class="l4-bullet-tag l4-bullet-tag-blue">OE4</span> Recomendar la estrategia preferible por configuración.</li>
+            </ul>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LAMINA 5 - METODOLOGIA E IMPACTO              -->
+      <!-- ============================================ -->
+      <section id="lamina-5">
+        <h2>Metodología e impacto esperado</h2>
+
+        <div class="l5-grid">
+
+          <div class="l5-left">
+
+            <div class="eyebrow">Modelo ABM propuesto</div>
+
+            <div class="l5-model-img">
+              <img src="assets/vODD_ABM.png" alt="Propuesta: sinergia entre memoria social e institucional">
+            </div>
+
+            <div class="l5-flow">
+              <div class="l5-flow-step">Modelo base</div>
+              <div class="l5-flow-arrow">→</div>
+              <div class="l5-flow-step">Extensión</div>
+              <div class="l5-flow-arrow">→</div>
+              <div class="l5-flow-step">Factorial</div>
+              <div class="l5-flow-arrow">→</div>
+              <div class="l5-flow-step">Métricas</div>
+              <div class="l5-flow-arrow">→</div>
+              <div class="l5-flow-step">ANOVA</div>
+            </div>
+
+          </div>
+
+          <div class="l5-right">
+
+            <div class="l5-card">
+              <div class="l5-card-title">Diseño experimental</div>
+              <ul class="l5-list">
+                <li>Memoria institucional: <em>k</em> ∈ {1, 5, 10, 15} · ruido ∈ {0; 0,1; 0,3; 0,5}</li>
+                <li>Memoria social: PF ∈ {1, 5}</li>
+                <li>Estrategia: aleatoria, por ingreso, por riesgo</li>
+              </ul>
+            </div>
+
+            <div class="l5-card l5-card-magenta">
+              <div class="l5-card-title">Variables de respuesta</div>
+              <ul class="l5-list">
+                <li><strong>PIAR</strong> — ingreso reportado</li>
+                <li><strong>MRA</strong> — aversión al riesgo</li>
+                <li><strong>PDF</strong> — fraudes detectados</li>
+              </ul>
+            </div>
+
+            <div class="l5-card l5-card-naranja">
+              <div class="l5-card-title">Impacto esperado</div>
+              <ul class="l5-list">
+                <li>Primer ABM con la interacción tripartita parametrizada.</li>
+                <li>Calibración de la profundidad de revisión retrospectiva para el SII.</li>
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="l5-cierre" style="position: absolute; bottom: 14px; left: 36px; right: 36px;">
+          "Decidir a quién auditar importa tanto como decidir hasta dónde mirar hacia atrás."
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      width: 1280,
+      height: 720,
+      margin: 0,
+      controls: true,
+      progress: true,
+      slideNumber: true,
+      hash: true,
+      transition: 'slide',
+      center: false
+    });
+  </script>
+</body>
+</html>
